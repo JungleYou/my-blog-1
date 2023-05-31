@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import CarRousel from "./CarRousel.vue";
+import CarRousel from "./car-rousel.vue";
 export default {
   name: "lunBo",
   components: {
@@ -42,6 +42,12 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
     .top {
       flex: 3;
       overflow: hidden;

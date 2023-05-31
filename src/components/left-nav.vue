@@ -4,7 +4,7 @@
     <div class="user"><img src="./img/1.jpg" alt="" /></div>
     <h6>用户名</h6>
     <!-- 导航开始 -->
-    <ul class="nav">
+    <ul class="nav" @click="change">
       <li tabindex="1">首页</li>
       <li tabindex="2">music</li>
     </ul>
@@ -16,13 +16,23 @@ export default {
   name: "leftNav",
   data() {
     return {
-      //   isnight: false,
+      pages: ["homePage", "blogInfo"],
     };
   },
   props: {
     isnight: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    change(e) {
+      // console.dir(e);
+      if (e.target.tabIndex) {
+        // console.log(e.target.tabIndex);
+        let index = e.target.tabIndex - 1;
+        this.$router.push({ name: this.pages[index] });
+      }
     },
   },
 };
